@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+	<meta charset="utf-8" />
+
+    <script src="js/calc.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/calc.png" size="196x196" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script type="text/javascript" src="js/theme.js"></script>
+</head>
+<body style = "height:100%; background-color:#444; color: #fff;" >
+
+    <div class ="navbar" id = "navbar">
+        <h3 class = "heading">Calculator</h3> 
+
+        <button id="demo-menu-lower-right" class="themes mdl-button mdl-js-button" onclick="myFunction()">
+            <span class="btn-theme" onclick="myFunction()">
+                Themes  
+                <i class="fa fa-angle-down" aria-hidden="true" style="font-size:18px" id="arrow" onclick="myFunction()">
+                </i>
+            </span>
+        </button>
+        <ul class="list mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+            <li class="mdl-menu__item" onclick="blue()"><span style = "color: #3949AB;">Blue</span></li>
+            <li class="mdl-menu__item" onclick="orange()"><span style = "color: #FF9800;">Orange</span></li>
+            <li  class="mdl-menu__item" onclick="red()"><span style = "color: #F44336;">Red</span></li>
+            <li class="mdl-menu__item" onclick="green()"><span style = "color: #4BAF4F;">Green</span></li>
+        </ul>
+            
+            
+            
+            
+  </div>
+</div>
+  </div>
+    </div>
+
+    <table align ="center" class="text" id="calc" cellspacing ="0" cellpadding ="0">
+        <tr>
+            <td >
+                <input  id="display" onkeypress="return event.charCode >= 48 && event.charCode <= 57" type="text" value = "0" readonly />
+            </td>
+            
+        </tr>
+       
+        <tr>
+            <td>
+                <div class="btn-grp" style="width: 100%" >
+                    <input  type="button" value="CE" style="width: 33%" class="btn" OnClick="display.value = '0'; dotchange(); blur();" />
+                    <input  type="button" value="C"  style="width: 34%" class="btn" OnClick="display.value = '0'; dotchange(); blur();" />               
+                    <input  type="button" value="⌫" style="width: 33%" class="btn" onclick="back(); blur()" />
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn-grp" style="width: 100%" >
+                    <input  type="button" value="√" style="width: 25%" class="btn" onclick="sqrt(); blur()" />
+                    <input  type="button" value="(" style="width: 25%" class="btn" OnClick="num('('); blur()" />
+                    <input  type="button" value=")"  style="width: 25%" class="btn" OnClick="num(')'); blur()" />
+                    <input  type="button" value="÷"  style="width: 25%" class="btn" OnClick="display.value+='/';dotchange(); blur()"/>
+                </div>
+            </td>
+        </tr>
+
+		<tr>
+            <td>
+                <div class="btn-grp" style="width: 100%" >
+                    <input  type="button" value="7" style="width: 25%" class="btn" OnClick="num(7);blur()"/>
+                    <input  type="button" value="8" style="width: 25%" class="btn" OnClick="num(8);blur()"/>
+                    <input  type="button" value="9" style="width: 25%" class="btn" OnClick="num(9);blur()"/>
+                    <input  type="button" value="x" style="width: 25%" class="btn" OnClick="display.value+='*';dotchange();blur()"/>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn-grp" style="width: 100%" >
+                    <input  type="button" value="4" style="width: 25%" class="btn" OnClick="num(4);blur()"/>
+                    <input  type="button" value="5" style="width: 25%" class="btn" OnClick="num(5);blur()"/>
+                    <input  type="button" value="6" style="width: 25%" class="btn" OnClick="num(6);blur()"/>
+                    <input  type="button" value="-" style="width: 25%" class="btn" OnClick="display.value+='-';dotchange();blur()"/>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn-grp" style="width: 100%" >
+                    <input  type="button" value="1" style="width: 25%" class="btn" OnClick="num(1);blur()"/>
+                    <input  type="button" value="2" style="width: 25%" class="btn" OnClick="num(2);blur()" />
+                    <input  type="button" value="3" style="width: 25%" class="btn" OnClick="num(3);blur()"/>
+                    <input  type="button" value="+" style="width: 25%" class="btn" OnClick="display.value+='+';dotchange();blur()"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="btn-grp" style="width: 100%" >
+                    <input  type="button" value="." style="width: 25%" class="btn" OnClick="dot();blur()"/>
+                    <input  type="button" value="0"  style="width: 25%" class="btn" OnClick="num(0);blur()" />
+                    <input  type="button" value="±" style="width: 25%" class="btn" OnClick="display.value=(display.value==Math.abs(display.value)?-(display.value):Math.abs(display.value));blur()"/>
+                    <input  type="button" value="="  style="width: 25%" class="btn equal" OnClick="display.value=eval(display.value)"/>
+                </div>
+            </td>
+        </tr>
+
+    </table>    
+</body>
+</html>
